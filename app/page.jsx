@@ -1,7 +1,10 @@
+import Card from "./Pages/Card/Card";
+
 const Dashboard = () => {
   return (
     <div>
-Dashboard
+      Dashboard
+      <div></div>
     </div>
   );
 };
