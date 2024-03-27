@@ -1,17 +1,15 @@
-import { Inter } from "next/font/google";
-import "./ui/globals.css";
+import './global.css';
 
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Abu Khair Anis Next.js Admin Dashboard",
-  description: "Next.js 14 Tutorial",
+  title: "Admin Dashboard",
+  description: "",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body >{children}</body>
     </html>
   );
 }
