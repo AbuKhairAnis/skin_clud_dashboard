@@ -14,15 +14,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className='text-lg font-semibold '>
-          <div >
-            <Sidebar />
-          </div>
+        <div className='text-lg'>
           <div >
             <Navbar />
+          <div className="flex gap-8 mx-6">
+            <Sidebar />
             {children}
           </div>
-        </div></body>
+          </div>
+        </div>
+        </body>
     </html>
   );
 }
