@@ -9,26 +9,30 @@ const Navbar = () => {
   const [formattedTime, setFormattedTime] = useState("");
 
   useEffect(() => {
-    const currentDate = new Date();
-    const options = {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    };
-    const formattedDateString = currentDate.toLocaleDateString(
-      "en-US",
-      options
-    );
-    setFormattedDate(formattedDateString);
+    const intervalId = setInterval(() => {
+      const currentDate = new Date();
+      const options = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      };
+      const formattedDateString = currentDate.toLocaleDateString(
+        "en-US",
+        options
+      );
+      setFormattedDate(formattedDateString);
 
-    const hours = currentDate.getHours();
-    const minutes = currentDate.getMinutes();
-    const formattedTimeString = `${hours % 12 || 12}:${
-      minutes < 10 ? "0" : ""
-    }${minutes} ${hours >= 12 ? "PM" : "AM"}`;
-    setFormattedTime(formattedTimeString);
+      const hours = currentDate.getHours();
+      const minutes = currentDate.getMinutes();
+      const formattedTimeString = `${hours % 12 || 12}:${
+        minutes < 10 ? "0" : ""
+      }${minutes} ${hours >= 12 ? "PM" : "AM"}`;
+      setFormattedTime(formattedTimeString);
+    }, 1000);
+    return () => clearInterval(intervalId);
   }, []);
+
   return (
     <div className="flex justify-between">
       <div>

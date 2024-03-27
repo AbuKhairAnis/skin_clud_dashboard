@@ -15,14 +15,14 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <div className="text-lg font-semibold">
-         <div className="py-5 mx-4">
-         <Navbar />
-         </div>
-          <div className="flex gap-8 mx-6">
-            <Sidebar />
+          <div className="py-5 mx-4">
+            <Navbar />
           </div>
-          <div>
-            {children}
+          <div className="flex gap-8 mx-6">
+            <div>
+              <Sidebar />
+            </div>
+            <div>{children}</div>
           </div>
         </div>
       </body>
